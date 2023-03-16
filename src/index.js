@@ -1,14 +1,16 @@
 const Phaser = require('phaser');
 const { MainScene } = require('./MainScene');
 
+const TILE_SIZE = 32;
+
 const config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
+  width: TILE_SIZE * 30,
+  height: TILE_SIZE * 20,
   parent: 'game',
   scene: [MainScene],
   render: {
-    pixelArt: true,
+    // pixelArt: true,
   },
 };
 

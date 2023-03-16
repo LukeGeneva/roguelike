@@ -10,7 +10,7 @@ class MainScene extends Phaser.Scene {
   }
 
   create() {
-    const mapGenerator = new MapGenerator(25, 19, 30, 4, 8);
+    const mapGenerator = new MapGenerator(30, 20, 30, 4, 8);
     this.map = mapGenerator.map;
     const mapData = mapGenerator.map;
 
