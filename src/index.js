@@ -6,7 +6,7 @@ const TILE_SIZE = 32;
 const config = {
   type: Phaser.AUTO,
   width: TILE_SIZE * 30,
-  height: TILE_SIZE * 20,
+  height: TILE_SIZE * 21,
   parent: 'game',
   scene: [MainScene],
   render: {
