@@ -31,7 +31,7 @@ class MainScene extends Phaser.Scene {
         if (this.map[x][y] === 1) {
           const wall = this.add.text(x * TILE_SIZE, y * TILE_SIZE, '#', {
             fontSize: `${TILE_SIZE}px`,
-            color: '#AAA',
+            color: '#0F0',
           });
           wall.setOrigin(0);
         }
