@@ -2,6 +2,8 @@ const Phaser = require('phaser');
 const { MapGenerator } = require('./MapGenerator');
 const { Player } = require('./Player');
 
+const TILE_SIZE = 32;
+
 class MainScene extends Phaser.Scene {
   constructor() {
     super('main');
@@ -27,8 +29,8 @@ class MainScene extends Phaser.Scene {
     for (let x = 0; x < this.map.length; x++) {
       for (let y = 0; y < this.map[x].length; y++) {
         if (this.map[x][y] === 1) {
-          const wall = this.add.text(x * 32, y * 32, '#', {
-            fontSize: '32px',
+          const wall = this.add.text(x * TILE_SIZE, y * TILE_SIZE, '#', {
+            fontSize: `${TILE_SIZE}px`,
             color: '#AAA',
           });
           wall.setOrigin(0);
@@ -55,20 +57,20 @@ class MainScene extends Phaser.Scene {
   }
 
   handleKeyInput(event) {
-    const x = this.player.x / 32;
-    const y = this.player.y / 32;
+    const x = this.player.x / TILE_SIZE;
+    const y = this.player.y / TILE_SIZE;
     switch (event.key) {
       case 'ArrowUp':
-        if (this.isEmptyCell(x, y - 1)) this.player.move(0, -32);
+        if (this.isEmptyCell(x, y - 1)) this.player.move(0, -TILE_SIZE);
         break;
       case 'ArrowDown':
-        if (this.isEmptyCell(x, y + 1)) this.player.move(0, 32);
+        if (this.isEmptyCell(x, y + 1)) this.player.move(0, TILE_SIZE);
         break;
       case 'ArrowLeft':
-        if (this.isEmptyCell(x - 1, y)) this.player.move(-32, 0);
+        if (this.isEmptyCell(x - 1, y)) this.player.move(-TILE_SIZE, 0);
         break;
       case 'ArrowRight':
-        if (this.isEmptyCell(x + 1, y)) this.player.move(32, 0);
+        if (this.isEmptyCell(x + 1, y)) this.player.move(TILE_SIZE, 0);
         break;
     }
   }
